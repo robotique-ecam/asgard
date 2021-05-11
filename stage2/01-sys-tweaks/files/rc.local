@@ -17,4 +17,13 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
+export ROS_VERSION=2
+export ROS_DISTRO=foxy
+export ROS_PYTHON_VERSION=3
+export ROS_LOCALHOST_ONLY=0
+export AMENT_PREFIX_PATH=/opt/ros/foxy
+export PYTHONPATH=/opt/ros/foxy/lib/python3.7/site-packages
+export LD_LIBRARY_PATH=/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib
+export PATH=/opt/ros/foxy/bin:$PATH
+
 exit 0
