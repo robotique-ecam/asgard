@@ -1,0 +1,12 @@
+export IMG_NAME=robotOS
+export RELEASE=buster
+export DEPLOY_ZIP=1
+export LOCALE_DEFAULT=en_US.UTF-8
+export TARGET_HOSTNAME=robot
+export LOCALE_DEFAULT=en_US.UTF-8
+export KEYBOARD_KEYMAP=fr
+export KEYBOARD_LAYOUT="French (FR)"
+export TIMEZONE_DEFAULT=Europe/Paris
+export FIRST_USER_NAME=bot
+export FIRST_USER_PASS=bot
+export ENABLE_SSH=1
