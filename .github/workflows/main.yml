@@ -1,0 +1,32 @@
+name: Image builder
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-aarch64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 900
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Docker Setup QEMU
+        uses: docker/setup-qemu-action@v1.0.1
+        with:
+          platforms: arm64
+      
+      - name: Build image
+        run: |
+          sudo apt-get update && sudo apt-get install -y qemu-user-static
+          ./build-docker.sh -c config
+          
+      - name: Upload built image
+        uses: actions/upload-artifact@v2.2.2
+        with:
+          name: robotOS-aarch64
+          path: deploy/*.zip
+          if-no-files-found: error
+          retention-days: 90
